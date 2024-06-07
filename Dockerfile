@@ -8,3 +8,4 @@ RUN rm -rf bonativo.zip &&\
     rm -rf bonativo
 EXPOSE 80
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
+new commit
