@@ -1,0 +1,16 @@
+---
+- name: jenkins project
+  hosts: all
+  tasks:
+       - name: stop container
+         ansible.builtin.shell:
+           cmd: docker stop con1
+       - name: delete container
+         ansible.builtin.shell:
+           cmd: docker rm con1
+       - name: delete image
+         ansible.builtin.shell:
+           cmd: docker rmi -f anas0ali/jenkins-project
+       - name: create container
+         ansible.builtin.shell:
+           cmd: docker run -d -p 80:80 --name=con1 anas0ali/jenkins-project
